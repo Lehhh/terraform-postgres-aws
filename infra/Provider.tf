@@ -2,6 +2,10 @@ provider "aws" {
   region = var.region
 }
 
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "soat7-lshiniti-postgres-rds-state"
+}
+
 data "aws_eks_cluster" "eks" {
   name = var.cluster_name
 }
